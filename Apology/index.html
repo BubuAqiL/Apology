@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For My Love ❤️</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Georgia", serif;
+      }
+
+      body {
+        min-height: 100vh;
+        display: block;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background: linear-gradient(135deg, #ffdde1, #ee9ca7, #fff1f5);
+        position: relative;
+        padding: 40px 0;
+      }
+
+      body::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            circle at top,
+            rgba(255, 255, 255, 0.45),
+            transparent 45%
+          ),
+          radial-gradient(
+            circle at bottom,
+            rgba(255, 182, 193, 0.25),
+            transparent 40%
+          );
+        z-index: 0;
+      }
+
+      .container {
+        position: relative;
+        z-index: 2;
+        width: 90%;
+        max-width: 760px;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(14px);
+        border: 1px solid rgba(255, 255, 255, 0.35);
+        border-radius: 28px;
+        padding: 42px 30px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        animation: fadeIn 1.4s ease;
+        margin: 40px auto;
+      }
+
+      h1 {
+        font-size: 3rem;
+        color: #b30059;
+        margin-bottom: 12px;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+        color: #6d214f;
+        margin-bottom: 24px;
+        font-weight: normal;
+      }
+
+      p {
+        font-size: 1.15rem;
+        color: #4a2c3a;
+        line-height: 1.9;
+        margin-bottom: 16px;
+      }
+
+      .buttons {
+        margin-top: 28px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 14px;
+      }
+
+      button {
+        border: none;
+        padding: 14px 28px;
+        border-radius: 999px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s ease;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .love-btn {
+        background: linear-gradient(45deg, #ff4f81, #ff85a2);
+        color: white;
+      }
+
+      .music-btn {
+        background: white;
+        color: #c2185b;
+      }
+
+      button:hover {
+        transform: translateY(-2px) scale(1.04);
+      }
+
+      .hidden-message {
+        display: none;
+        margin-top: 28px;
+        padding: 22px;
+        border-radius: 22px;
+        background: rgba(255, 255, 255, 0.55);
+        color: #a0004d;
+        font-size: 1.15rem;
+        line-height: 1.8;
+        animation: fadeIn 1s ease;
+      }
+
+      .small-note {
+        margin-top: 18px;
+        font-size: 0.95rem;
+        color: #7a3d5a;
+        opacity: 0.9;
+      }
+
+      .heart,
+      .petal {
+        position: absolute;
+        z-index: 1;
+        pointer-events: none;
+        animation-timing-function: linear;
+      }
+
+      .heart {
+        color: rgba(255, 77, 121, 0.4);
+        animation-name: floatHeart;
+      }
+
+      .petal {
+        color: rgba(255, 255, 255, 0.8);
+        animation-name: fallPetal;
+      }
+
+      @keyframes floatHeart {
+        0% {
+          transform: translateY(100vh) scale(0.8);
+          opacity: 0;
+        }
+        15% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(-15vh) scale(1.4);
+          opacity: 0;
+        }
+      }
+
+      @keyframes fallPetal {
+        0% {
+          transform: translateY(-10vh) rotate(0deg);
+          opacity: 0;
+        }
+        15% {
+          opacity: 1;
+        }
+        100% {
+          transform: translateY(110vh) translateX(60px) rotate(360deg);
+          opacity: 0;
+        }
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(25px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @media (max-width: 600px) {
+        h1 {
+          font-size: 2.2rem;
+        }
+        h2 {
+          font-size: 1.15rem;
+        }
+        p,
+        .hidden-message {
+          font-size: 1rem;
+        }
+        .container {
+          padding: 30px 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>To My Precious Love ❤️</h1>
+      <h2>
+        This little page carries my heart, my apology, and my love for you
+      </h2>
+
+      <p>
+        I know I have made mistakes, and I am truly sorry for everything. If I
+        could take away the pain I caused, I would do it in a heartbeat.
+      </p>
+      <p>
+        You are one of the most beautiful parts of my life, and I never want you
+        to doubt how deeply I love, appreciate, and cherish you.
+      </p>
+      <p>
+        I made this surprise just for you, because simple words do not feel
+        enough to show how sorry I am and how much I still want to make things
+        right between us.
+      </p>
+
+      <div class="buttons">
+        <button class="love-btn" onclick="showForgiveMessage()">
+          Forgive Me, My Love 💌
+        </button>
+        <button class="music-btn" onclick="toggleMusic()">
+          Play Our Love Song 🎵
+        </button>
+      </div>
+
+      <div class="hidden-message" id="specialMessage">
+        My love, I am sincerely sorry.<br /><br />
+        No matter what happens, please know that my feelings for you are real,
+        my regret is real, and my love for you is real too.<br /><br />
+        I do not want a perfect story with anyone else. I only want a chance to
+        make things better with you, to treat you more gently, love you more
+        carefully, and remind you every day how special you are to me.<br /><br />
+        So here I am, with all my heart, asking you... can you forgive me? ❤️
+      </div>
+
+      <div class="small-note">
+        I Love You Sayang, Im sorry for everything my love <3
+      </div>
+    </div>
+
+    <audio id="bgMusic" loop>
+      <source src="sempurna.mp3" type="audio/mpeg" />
+    </audio>
+
+    <script>
+      const message = document.getElementById("specialMessage");
+      const music = document.getElementById("bgMusic");
+      let musicPlaying = false;
+
+      function showForgiveMessage() {
+        message.style.display = "block";
+        launchLoveBurst();
+      }
+
+      function toggleMusic() {
+        if (!musicPlaying) {
+          music.play();
+          musicPlaying = true;
+        } else {
+          music.pause();
+          musicPlaying = false;
+        }
+      }
+
+      function createHeart() {
+        const heart = document.createElement("div");
+        heart.classList.add("heart");
+        heart.innerHTML = "❤";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = Math.random() * 22 + 14 + "px";
+        heart.style.animationDuration = Math.random() * 3 + 4 + "s";
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 7000);
+      }
+
+      function createPetal() {
+        const petal = document.createElement("div");
+        petal.classList.add("petal");
+        petal.innerHTML = "✿";
+        petal.style.left = Math.random() * 100 + "vw";
+        petal.style.fontSize = Math.random() * 16 + 10 + "px";
+        petal.style.animationDuration = Math.random() * 4 + 5 + "s";
+        document.body.appendChild(petal);
+        setTimeout(() => petal.remove(), 9000);
+      }
+
+      function launchLoveBurst() {
+        for (let i = 0; i < 25; i++) {
+          setTimeout(createHeart, i * 120);
+        }
+      }
+
+      setInterval(createHeart, 500);
+      setInterval(createPetal, 900);
+    </script>
+  </body>
+</html>
